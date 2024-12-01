@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-secondary-50 text-secondary-900;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 
+           transition-colors duration-200 focus:outline-none focus:ring-2 
+           focus:ring-primary-500 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 bg-secondary-100 text-secondary-900 rounded-lg 
+           hover:bg-secondary-200 transition-colors duration-200 
+           focus:outline-none focus:ring-2 focus:ring-secondary-500 
+           focus:ring-offset-2;
+  }
+
+  .input-field {
+    @apply w-full px-3 py-2 border border-secondary-300 rounded-lg 
+           focus:outline-none focus:ring-2 focus:ring-primary-500 
+           focus:border-primary-500;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-sm p-6 border border-secondary-200;
+  }
+
+  .section-title {
+    @apply text-2xl font-bold text-secondary-800 mb-4;
+  }
+
+  .text-label {
+    @apply text-sm font-medium text-secondary-700;
+  }
+
+  .text-value {
+    @apply font-semibold text-secondary-900;
+  }
+
+  .grid-layout {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4;
+  }
+
+  .nav-link {
+    @apply px-3 py-2 rounded-lg text-secondary-600 hover:text-secondary-900 
+           hover:bg-secondary-100 transition-colors duration-200;
+  }
+
+  .nav-link-active {
+    @apply text-primary-600 bg-primary-50;
+  }
+}
+
+/* Toast animations */
+.toast-enter {
+  transform: translateX(100%);
+}
+
+.toast-enter-active {
+  transform: translateX(0);
+  transition: transform 300ms ease-out;
+}
+
+.toast-exit {
+  transform: translateX(0);
+}
+
+.toast-exit-active {
+  transform: translateX(100%);
+  transition: transform 300ms ease-out;
+}
+
+/* Loading spinner */
+.spinner {
+  @apply w-6 h-6 border-4 border-secondary-200 rounded-full;
+  border-top-color: theme('colors.primary.600');
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
